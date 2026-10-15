@@ -16,7 +16,7 @@ router.get("/getImage", (req, res) => {
     res.set("Access-Control-Allow-Origin", "*");
 
     res.sendFile(
-        path.join(__dirname, "../public/banner.gif")
+        path.join(__dirname, "../public/banner.png")
     );
 });
 
