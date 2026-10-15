@@ -13,6 +13,7 @@ app.use("/", require("./routes/home")); // route for home
 app.use("/games", require("./routes/games")); // route for games
 app.use("/analyze", require("./routes/analyze")); // route for analyses
 app.use("/download", require("./routes/download")); // route for download
+app.use("/api", require("./routes/api")); // route for api
 
 
 // Custom 404 handler
