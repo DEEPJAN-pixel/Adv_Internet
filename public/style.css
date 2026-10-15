@@ -1,5 +1,407 @@
+/* FRAMEFORECAST - RED GAMING THEME */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
+    background: #090a0f;
+    color: #f5f5f7;
     font-family: Arial, sans-serif;
-    background-color: #121212;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 7%;
+    background: #101116;
+    border-bottom: 1px solid #26262e;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span,
+h1 span {
+    color: #ff354b;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    font-size: 14px;
+    color: #c4c4cc;
+}
+
+nav a:hover {
+    color: #ff354b;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* HOMEPAGE HERO */
+
+.hero {
+    padding: 100px 0 85px;
+    background: radial-gradient(ellipse at 75% 50%,
+            rgba(179, 19, 42, 0.17),
+            transparent 55%);
+}
+
+.eyebrow {
+    color: #ff4659;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(36px, 6vw, 68px);
+    line-height: 1.08;
+    max-width: 850px;
+    margin: 18px 0;
+    font-weight: 900;
+}
+
+.hero-description,
+.page-intro p,
+.tip-card p {
+    color: #a6a8b3;
+    line-height: 1.7;
+}
+
+.hero-description {
+    max-width: 550px;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #e62c41;
     color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #ff4659;
+    box-shadow: 0 0 22px rgba(255, 53, 75, 0.25);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #56515a;
+}
+
+.btn-outline:hover {
+    background: #202027;
+}
+
+/* FEATURED GAME SLIDESHOW */
+
+.featured,
+.optimization {
+    margin-bottom: 75px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+#slideCounter {
+    color: #999aa5;
+    font-size: 13px;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.game-slide {
+    flex: 1;
+    min-width: 0;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    padding: 45px;
+    border: 1px solid #453039;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.game-valorant {
+    background: linear-gradient(115deg, #43111e, #17131e 65%, #701b30);
+}
+
+.game-cs2 {
+    background: linear-gradient(115deg, #372219, #17191d 65%, #67502d);
+}
+
+.game-cyberpunk {
+    background: linear-gradient(115deg, #37230a, #20152a 65%, #692444);
+}
+
+.game-slide::after {
+    content: "FF";
+    position: absolute;
+    right: 3%;
+    font-size: clamp(100px, 23vw, 270px);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.035);
+    pointer-events: none;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    max-width: 580px;
+}
+
+.slide-content h3 {
+    font-size: clamp(30px, 5vw, 55px);
+    margin: 14px 0;
+}
+
+.slide-content>p:not(.eyebrow) {
+    color: #d5cbd0;
+    line-height: 1.6;
+}
+
+#slideLink {
+    display: inline-block;
+    color: #ff6575;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 22px;
+}
+
+.slide-arrow {
+    flex-shrink: 0;
+    background: #1b1c23;
+    color: white;
+    border: 1px solid #393942;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.slide-arrow:hover {
+    background: #e62c41;
+}
+
+.slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 20px;
+}
+
+.slide-dot {
+    width: 9px;
+    height: 9px;
+    border: none;
+    border-radius: 50%;
+    background: #555660;
+    cursor: pointer;
+}
+
+.slide-dot.active {
+    background: #ff354b;
+}
+
+/* OPTIMIZATION CARDS */
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.tip-card,
+.analyzer-panel {
+    background: #15161d;
+    border: 1px solid #2e2f39;
+    border-radius: 12px;
+}
+
+.tip-card {
+    padding: 24px;
+}
+
+.tip-icon {
+    color: #ff4659;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.tip-card h3 {
+    font-size: 16px;
+}
+
+.tip-card p {
+    font-size: 13px;
+}
+
+/* ANALYZER PAGE */
+
+.page-intro {
+    padding: 65px 0 30px;
+}
+
+.page-intro h1 {
+    font-size: clamp(32px, 5vw, 48px);
+}
+
+.analyzer-panel {
+    max-width: 850px;
+    padding: 35px;
+    margin-bottom: 65px;
+}
+
+.analyzer-panel h2 {
+    margin-top: 0;
+    margin-bottom: 28px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 26px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #c9cbd4;
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    padding: 14px;
+    background: #22242e;
+    border: 1px solid #41434e;
+    border-radius: 7px;
+    color: white;
+    font-size: 15px;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    outline: none;
+    border-color: #ff354b;
+}
+
+#results:not(:empty) {
+    margin-top: 30px;
+    padding: 25px;
+    background: #1b1d26;
+    border: 1px solid #433039;
+    border-radius: 10px;
+}
+
+#results a {
+    color: #ff6575;
+    font-weight: bold;
+}
+
+/* OTHER PAGES */
+
+.container>h1 {
+    margin-top: 45px;
+}
+
+.container ul {
+    line-height: 2.3;
+}
+
+.container ul a {
+    color: #ff6575;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: #777985;
+    font-size: 12px;
+    border-top: 1px solid #252630;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+    .site-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .game-slide {
+        padding: 25px;
+        min-height: 300px;
+    }
+
+    .tips-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .analyzer-panel {
+        padding: 22px;
+    }
 }
